@@ -1,0 +1,126 @@
+INSERT INTO games (title, description, price, image) VALUES
+('Cyber War', 'A futuristic battle game set in 2089.', 19.99, 'cyber_war.jpg'),
+('Shadow Ninja', 'Stealth-based ninja game with intense combat.', 14.99, 'shadow_ninja.jpg'),
+('Space Odyssey', 'Explore distant galaxies in this space adventure.', 24.99, 'space_odyssey.jpg'),
+('Zombie Apocalypse', 'Survive waves of zombies in an open world.', 17.49, 'zombie_apocalypse.jpg'),
+('Dragon Slayer', 'A medieval RPG with legendary dragon battles.', 29.99, 'dragon_slayer.jpg'),
+('Ultimate Racer', 'High-speed racing with realistic physics.', 21.99, 'ultimate_racer.jpg'),
+('Mystic Quest', 'A magical world full of quests and mysteries.', 12.99, 'mystic_quest.jpg'),
+('Warriors of Doom', 'Lead your army in epic strategic battles.', 18.99, 'warriors_of_doom.jpg'),
+('Alien Invasion', 'Defend Earth from an alien attack.', 15.99, 'alien_invasion.jpg'),
+('Super Brawler', 'Fighting game with various characters and skills.', 9.99, 'super_brawler.jpg'),
+('City Builder', 'Create and manage your own metropolis.', 22.49, 'city_builder.jpg'),
+('Legend of the Phoenix', 'Fantasy RPG with an immersive storyline.', 27.99, 'legend_phoenix.jpg'),
+('Battle Arena', 'Multiplayer battle royale game with intense combat.', 19.49, 'battle_arena.jpg'),
+('Horror Mansion', 'Solve puzzles and escape the haunted mansion.', 13.99, 'horror_mansion.jpg'),
+('Pirates of the Ocean', 'Sail the seas and battle other pirates.', 16.99, 'pirates_ocean.jpg'),
+('Samurai Reborn', 'Historical action game featuring samurai battles.', 20.99, 'samurai_reborn.jpg'),
+('Mecha Warzone', 'Giant robot battles in a futuristic world.', 25.99, 'mecha_warzone.jpg'),
+('Fantasy Kingdom', 'Build and expand your magical kingdom.', 23.49, 'fantasy_kingdom.jpg'),
+('Dark Souls Legend', 'Challenging RPG with deep lore and tough enemies.', 31.99, 'dark_souls_legend.jpg'),
+('Rogue Agent', 'Spy-themed action game with stealth mechanics.', 14.49, 'rogue_agent.jpg'),
+('Tactical Shooter', 'Realistic FPS with tactical gameplay.', 26.99, 'tactical_shooter.jpg'),
+('Ancient Wars', 'Turn-based strategy game set in ancient times.', 18.49, 'ancient_wars.jpg'),
+('Monster Tamer', 'Capture and train monsters for battles.', 19.99, 'monster_tamer.jpg'),
+('Assassins Legacy', 'Stealth and parkour-based action-adventure.', 29.99, 'assassins_legacy.jpg'),
+('Battlefield Heroes', 'Tactical FPS with realistic combat mechanics.', 24.99, 'battlefield_heroes.jpg'),
+('Cursed Crypt', 'Solve puzzles and uncover secrets in an ancient crypt.', 16.99, 'cursed_crypt.jpg'),
+('Eternal Fantasy', 'An open-world RPG filled with magic and adventure.', 32.99, 'eternal_fantasy.jpg'),
+('Ghost Recon Elite', 'Co-op tactical shooter with modern warfare elements.', 27.99, 'ghost_recon_elite.jpg'),
+('Titan Mech Wars', 'Pilot giant mechs in large-scale futuristic battles.', 34.99, 'titan_mech_wars.jpg'),
+('Survival Instinct', 'An open-world survival game with crafting and combat.', 19.49, 'survival_instinct.jpg'),
+('Dark Void Chronicles', 'Sci-fi shooter with fast-paced combat and deep story.', 21.99, 'dark_void_chronicles.jpg'),
+('Hackers Uprising', 'Cyberpunk hacking simulation with strategy elements.', 13.99, 'hackers_uprising.jpg'),
+('The Last Defender', 'Defend humanity against a robot uprising.', 22.49, 'last_defender.jpg'),
+('Neon Drift', 'Futuristic racing game with high-speed chases.', 18.99, 'neon_drift.jpg'),
+('Virtual Gladiators', 'Multiplayer battle game set in a virtual world.', 26.99, 'virtual_gladiators.jpg'),
+('Dungeon Crawler X', 'Roguelike dungeon explorer with intense combat.', 14.49, 'dungeon_crawler_x.jpg'),
+('Rebellion Rising', 'Lead a rebellion against an oppressive empire.', 30.99, 'rebellion_rising.jpg'),
+('Steampunk Revolution', 'Steampunk-inspired strategy and city-building game.', 28.99, 'steampunk_revolution.jpg'),
+('Cyberpunk 2077', 'An open-world RPG set in a cybernetic future.', 49.99, 'cyberpunk2077.jpg'),
+('Elden Ring', 'An epic action RPG from FromSoftware.', 59.99, 'eldenring.jpg'),
+('The Witcher 3', 'An award-winning open-world fantasy RPG.', 39.99, 'witcher3.jpg'),
+('God of War', 'A mythological adventure with Kratos.', 29.99, 'godofwar.jpg'),
+('Red Dead Redemption 2', 'An open-world western adventure.', 44.99, 'rdr2.jpg'),
+('Hogwarts Legacy', 'A magical RPG set in the Harry Potter universe.', 54.99, 'hogwartslegacy.jpg'),
+('Spider-Man Remastered', 'An action-packed superhero game.', 39.99, 'spiderman.jpg'),
+('Assassin\'s Creed Valhalla', 'A Viking adventure with open-world exploration.', 34.99, 'acvalhalla.jpg'),
+('Resident Evil 4 Remake', 'A survival horror game with intense action.', 59.99, 're4remake.jpg'),
+('Grand Theft Auto V', 'An open-world crime action game.', 29.99, 'gta5.jpg'),
+('Call of Duty: Modern Warfare II', 'A first-person shooter with realistic combat.', 69.99, 'codmw2.jpg'),
+('Starfield', 'A next-generation space exploration RPG by Bethesda.', 69.99, 'starfield.jpg');
+
+
+
+
+
+
+
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE games (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE cart (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    game_id INT NOT NULL,
+    quantity INT DEFAULT 1,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    total_price DECIMAL(10,2) NOT NULL,
+    payment_status ENUM('pending', 'completed', 'failed') DEFAULT 'pending',
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE library (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    game_id INT NOT NULL,
+    purchase_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE
+);
+
+CREATE TABLE purchases (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    game_id INT NOT NULL,
+    purchase_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    price DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE
+);
+ALTER TABLE purchases 
+ADD COLUMN payment_status ENUM('Pending', 'Completed', 'Failed') DEFAULT 'Pending' AFTER price;
+
+CREATE TABLE admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO admin (email, password) VALUES ('admin@example.com', MD5('admin123'));
+

@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(45deg, #010101, #090909);
+    background-size: 200% 200%;
+    animation: bgAnimation 6s infinite alternate;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+@keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Profile Container */
+.profile-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+    background: rgba(70, 70, 70, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Heading Glow Effect */
+h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #1fd841, 0 0 20px #1fd841; }
+    100% { text-shadow: 0 0 20px #1fd841, 0 0 40px #1fd841; }
+}
+
+/* Text Styling */
+p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Shine Effect */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    width: 150%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-30deg);
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 150%;
+}
+
+/* Edit Profile Button */
+.edit-btn {
+    background: linear-gradient(135deg, #1fd841, #1fd841);
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(243, 156, 18, 0.5);
+}
+
+.edit-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(243, 156, 18, 0.8);
+}
+
+/* Logout Button */
+.logout-btn {
+    background: linear-gradient(135deg, #1fd841, #1fd841);
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(231, 76, 60, 0.5);
+}
+
+.logout-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(231, 76, 60, 0.8);
+}
+
+/* Form Styles */
+form {
+    margin-top: 15px;
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin: 10px 0 5px;
+    color: #ddd;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    font-size: 14px;
+    background: #3a3a52;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Input Focus Effect */
+input:focus {
+    outline: none;
+    border: 2px solid #f39c12;
+    box-shadow: 0 0 10px rgba(243, 156, 18, 0.8);
+}
+
+/* Save Changes Button */
+.save-btn {
+    background: linear-gradient(135deg, #1fd841, #1fd841);
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(39, 174, 96, 0.5);
+}
+
+.save-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(39, 174, 96, 0.8);
+}
+
+/* Cancel Button */
+.cancel-btn {
+    background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(127, 140, 141, 0.5);
+}
+
+.cancel-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(127, 140, 141, 0.8);
+}

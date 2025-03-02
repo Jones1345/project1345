@@ -1,0 +1,165 @@
+/* ========== General Styles ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: url('https://wallpaperaccess.com/full/5872527.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ========== Register Form Container ========== */
+.register-container {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0px 0px 15px rgba(255, 81, 47, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading Styling */
+h2 {
+    color: #1fd841;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #222;
+    color: white;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Input Hover Effect */
+input:focus {
+    border: 2px solid #ff512f;
+}
+
+/* Register Button */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+button:hover {
+    background: linear-gradient(90deg, #dd2476, #ff512f);
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(255, 81, 47, 0.5);
+}
+
+/* Login Link Styling */
+.register-container p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+.register-container a {
+    color: #ff512f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.register-container a:hover {
+    color: #ffdd57;
+}
+
+/* Form Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.popup-content {
+    background: #222;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 81, 47, 0.5);
+    color: white;
+    width: 350px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.popup-content h3 {
+    font-size: 22px;
+    color: #ffdd57;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.popup-content a {
+    color: #ff512f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.popup-content button {
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.popup-content button:hover {
+    background: linear-gradient(90deg, #dd2476, #ff512f);
+    transform: scale(1.05);
+}
+
+/* Popup Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

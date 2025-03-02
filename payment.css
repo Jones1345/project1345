@@ -1,0 +1,107 @@
+/* Payment Page Container */
+body {
+    background: #0d0d0d;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    padding: 10px 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Store Title */
+nav h1 {
+    color: #ffdd57;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: auto; /* Pushes the menu items to the right */
+}
+
+/* Navigation Links */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Adds space between menu items */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff512f;
+}
+
+/* Add margin below navigation for spacing */
+header {
+    margin-bottom: 30px;
+}
+h1 {
+    margin-right: 50px; /* Increases space between title and navigation */
+}
+.payment-container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+.payment-container h2 {
+    color: #ffcc00;
+    font-size: 2rem;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+}
+
+.total-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* PayPal Button */
+.paypal-btn {
+    background: #009cde;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 20px;
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0, 156, 222, 0.5);
+}
+
+.paypal-btn:hover {
+    background: #007bb5;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .payment-container {
+        width: 90%;
+    }
+    .paypal-btn {
+        font-size: 1.1rem;
+    }
+}

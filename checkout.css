@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #0e0e0f;
+    color: #fff;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Checkout Container */
+.checkout-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, #2d2c2c, #363636);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Glowing Title Effect */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #1fd841, 0 0 20px #1fd841; }
+    100% { text-shadow: 0 0 20px #1fd841, 0 0 40px #1fd841; }
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    color: #fff;
+}
+
+table th {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Total Price */
+p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffe600;
+    margin: 10px 0;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 14px;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background: #2b2b3b;
+    color: #fff;
+    text-align: center;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+/* Payment Button */
+.btn {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #1fd841, #1fd841);
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 198, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 114, 255, 0.8);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .checkout-container {
+        width: 95%;
+    }
+
+    input, .btn {
+        width: 90%;
+    }
+}

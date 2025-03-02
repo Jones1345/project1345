@@ -1,0 +1,47 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    padding: 10px 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Store Title */
+nav h1 {
+    color: #ffdd57;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: auto; /* Pushes the menu items to the right */
+}
+
+/* Navigation Links */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Adds space between menu items */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff512f;
+}
+
+/* Add margin below navigation for spacing */
+header {
+    margin-bottom: 30px;
+}
+h1 {
+    margin-right: 50px; /* Increases space between title and navigation */
+}
