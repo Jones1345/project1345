@@ -1,0 +1,247 @@
+admin_games.php
+
+<?php
+include('db_connect.php');
+session_start();
+
+if (!isset($_SESSION['admin_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Fetch all games
+$query = "SELECT * FROM games ORDER BY id DESC";
+$result = mysqli_query($conn, $query);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Game List</title>
+    <link rel="stylesheet" href="admin_games.css?v=<?php echo time(); ?>">
+</head>
+<body>
+    <?php include('admin_header.php'); ?>
+
+    <div class="admin-container">
+        <h2>🎮 Manage Games</h2>
+
+        <div class="table-container">
+            <table class="small-game-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Game</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['title']; ?></td>
+                            <td><img src="images/<?php echo $row['image']; ?>" alt="<?php echo $row['title']; ?>"></td>
+                            <td>$<?php echo $row['price']; ?></td>
+                            <td>
+                                <a href="edit_game.php?id=<?php echo $row['id']; ?>" class="edit-btn">✏️ Edit</a>
+                                <a href="delete_game.php?id=<?php echo $row['id']; ?>" class="delete-btn" onclick="return confirm('Are you sure you want to delete this game?')">🗑️ Delete</a>
+                                <a href="admin_add_game.php?id=<?php echo $row['id']; ?>" class="add-btn">➕ Add</a>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+
+
+admin_games.css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Header - KEEPING IT SAME */
+header {
+    display: flex;
+    align-items: center;
+    background: #222;
+    color: white;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px; /* Sidebar width */
+    height: 100%;
+    flex-direction: column;
+    text-align: left;
+}
+
+header .logo {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav ul li {
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #444;
+}
+
+/* Move Content to the Right */
+.admin-container {
+    margin-left: 270px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Game Table */
+.game-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+.game-table th, .game-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.game-table th {
+    background: #222;
+    color: white;
+}
+
+.game-table img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Action Buttons */
+.edit-btn, .delete-btn, .add-btn {
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background: #007bff;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #0056b3;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #a71d2a;
+}
+
+.add-btn {
+    background: #1fd841;
+    color: white;
+}
+
+.add-btn:hover {
+    background: #1fd841;
+}
+.small-game-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 10px auto;
+    background: white;
+}
+
+.small-game-table th, .small-game-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.small-game-table th {
+    background: #222;
+    color: white;
+}
+
+.small-game-table img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Action Buttons */
+.edit-btn, .delete-btn, .add-btn {
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 3px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background: #007bff;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #0056b3;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #a71d2a;
+}
+.add-btn {
+    background: #1fd841;
+    color: white;
+}
+
+.add-btn:hover {
+    background: #1fd841;
+}

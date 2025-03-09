@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background: #222;
+    color: white;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px; /* Sidebar width */
+    height: 100%;
+    flex-direction: column;
+    text-align: left;
+}
+
+header .logo {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav ul li {
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #444;
+}
+
+/* Container for Form */
+.form-container {
+    background: #7d7c7c;
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Form Labels */
+.form-container label {
+    display: block;
+    font-size: 18px;
+    margin: 10px 0 5px;
+    text-align: left;
+    color: #ffffff;
+}
+
+/* Input Fields */
+.form-container input,
+.form-container textarea {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #3a3838;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* File Input */
+.form-container input[type="file"] {
+    border: none;
+}
+
+/* Submit Button */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background: #ff6600;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form-container button:hover {
+    background: #ff4500;
+}
+
